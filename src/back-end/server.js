@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 //Serve main page
 app.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname, '../index.html'))
+  res.sendFile(path.resolve(__dirname,'../../index.html')); //Update to use build html file later**
 })
 
 //Page Not Found Error
@@ -38,5 +38,5 @@ app.use((err, req, res, next) => {
 
 //Listen to Port
 app.listen(PORT, ()=>{
-  console.log(`Server listening on ${PORT}`)
+  console.log(`Server listening on port ${PORT}`)
 })
