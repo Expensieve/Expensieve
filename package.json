@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "nodemon src/back-end/server.js localhost 8080",
-    "build": "rm -rf dist && webpack --mode development"
+    "start": "node src/back-end/server.js",
+    "start-dev": "nodemon src/back-end/server.js",
+    "build": "webpack --mode development"
   },
   "repository": {
     "type": "git",
