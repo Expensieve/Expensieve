@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const testArray = [{
     id: 0,
@@ -12,14 +12,21 @@ const testArray = [{
   }, {
     id: 3,
     name: 'My Deadbeat Friends'
-  }]
+  }];
 
-export default function groupsSidebar() {
+export default function GroupSidebar({groupSelection, setGroupSelection}) {
+
+  function handleClick(group: { id: number; name: string }) {
+    setGroupSelection(group.name)
+  }
+
   testArray.sort();
 
-  const groupList = testArray.map(groupName =>
-    <li key={groupName.id}>
-      {groupName.name}
+  const groupList = testArray.map(group =>
+    <li key={group.id}>
+      <button onClick={handleClick}>
+        {group.name}
+      </button>
     </li>
   )
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const testArray = [{
     id: 0,
@@ -14,7 +14,7 @@ const testArray = [{
     name: '🦙 Llamazon Web Services'
   }]
 
-export default function servicesSidebar() {
+export default function ServiceSidebar({serviceSelection, setServiceSelection}) {
   testArray.sort();
 
   const servicesList = testArray.map(serviceName =>
