@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 
 //Connect to DB
 
-
 //Server Dependencies
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
