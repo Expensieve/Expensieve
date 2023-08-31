@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 //Connect to DB
-const {appRouter} = require('./db/dbRoutes/appRouter');
+const appRouter = require('./db/dbRoutes/appRouter');
 
 //Server Dependencies
 app.use(express.json());

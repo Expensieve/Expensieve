@@ -6,7 +6,6 @@ const groupController = {};
 //Is Router working?
 groupController.group = (req, res, next) =>{
   console.log('Group Controller is functioning!');
-  res.locals = 'did it'
   next();
 };
 
@@ -32,4 +31,4 @@ groupController.group = (req, res, next) =>{
 //Update a group
 
 
-module.exports = groupController;
+module.exports = {groupController};

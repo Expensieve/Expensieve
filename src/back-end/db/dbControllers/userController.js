@@ -3,8 +3,8 @@ const db = require('../dbModels/expensieveDB');
 
 const userController = {};
 
-userController.User = (req,res, next)=>{
-  console.log('User Router is working!');
+userController.user = (req,res, next)=>{
+  console.log('userController is functioning!');
   next();
 }
 
@@ -23,4 +23,4 @@ userController.User = (req,res, next)=>{
 //Get a list of all Users associated to current User
 
 
-module.exports = userController;
+module.exports = {userController};

@@ -3,6 +3,11 @@ const db = require('../dbModels/expensieveDB');
 
 const subscriptionController = {};
 
+subscriptionController.subscription = (req, res, next)=>{
+  console.log('subscriptionController is functioning!');
+  next();
+};
+
 // Verify Subscription
 
 //------------------------------------------------------------------------
@@ -39,4 +44,4 @@ const subscriptionController = {};
 
 
 
-module.exports = subscriptionController;
+module.exports = {subscriptionController};

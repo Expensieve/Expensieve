@@ -3,6 +3,11 @@ const db = require('../dbModels/expensieveDB');
 
 const transactionController = {};
 
+transactionController.transaction = (req, res, next)=>{
+  console.log('subscriptionController is functioning!');
+  next();
+};
+
 //Get all transactions
 
 
@@ -19,4 +24,4 @@ const transactionController = {};
 
 
 
-module.exports = transactionController;
+module.exports = {transactionController};

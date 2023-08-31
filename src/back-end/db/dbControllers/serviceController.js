@@ -1,12 +1,12 @@
 //Handle all queries related to adding, removing and managing service permissions
 const db = require('../dbModels/expensieveDB');
 
-serviceController = {};
+const serviceController = {};
 
 serviceController.service = (req, res, next)=>{
-  console.log('Middleware Chain at serviceController working');
+  console.log('serviceController is functioning!');
   next();
-}
+};
 
 //Verify Service
 
@@ -28,4 +28,4 @@ serviceController.service = (req, res, next)=>{
 
 //Update a service
 
-module.exports = serviceController;
+module.exports = {serviceController};
