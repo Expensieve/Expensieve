@@ -6,6 +6,13 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 //Connect to DB
+const userRouter = require('./db/dbRoutes/userRouter');
+
+const serviceRouter = require('./db/dbRoutes/serviceRouter');
+const subscriptionRouter = require('./db/dbRoutes/subscriptionRouter');
+
+const { default: groupRouter } = require('./db/dbRoutes/groupRouter');
+const transactionRouter = require('./db/dbRoutes/transactionRouter');
 
 //Server Dependencies
 app.use(express.json());
@@ -17,6 +24,16 @@ app.use(cookieParser());
 app.get('/', (req, res)=>{
   res.sendFile(path.resolve(__dirname,'../../index.html')); //Update to use build html file later**
 })
+
+//Routes
+
+app.use('/user', userRouter);
+app.use('/group', groupRouter);
+app.use('/service', serviceRouter);
+app.use('/subscription', subscriptionRouter);
+app.use('/transaction', transactionRouter);
+
+
 
 //Page Not Found Error
 app.use((req,res)=>{
