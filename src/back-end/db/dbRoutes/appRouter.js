@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import { groupController } from '../dbControllers/groupController';
-const groupRouter = Router();
+const appRouter = Router();
 
 
+
+//Add routes for '/user' here
 
 
 //Add routes for '/group' here
@@ -11,6 +13,14 @@ groupRouter.get('/', groupController.group, (req, res)=>{
 })
 
 
+//Add routes for '/service' here
 
 
-export default groupRouter;
+//Add routes for '/subscription'here
+
+
+//Add routes for '/transaction' here
+
+
+
+export default appRouter;
