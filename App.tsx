@@ -1,7 +1,8 @@
 import React from "react";
-import GroupsSidebar from "./components/groupsSidebar";
-import ServiceDashboard from "./components/serviceDashboard";
-import ServicesSidebar from "./components/servicesSidebar";
+import GroupsSidebar from "./src/front-end/components/groupsSidebar";
+import ServiceDashboard from "./src/front-end/components/serviceDashboard";
+import ServicesSidebar from "./src/front-end/components/servicesSidebar";
+import './app.css';
 
 export default function App() {
   return (
