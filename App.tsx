@@ -1,11 +1,15 @@
 import React from "react";
+import GroupsSidebar from "./src/front-end/components/groupsSidebar";
+import ServicesSidebar from "./src/front-end/components/servicesSidebar";
+import ServiceDashboard from "./src/front-end/components/ServiceDashboard";
+import './app.css';
 
 export default function App() {
   return (
     <>
-      TEST FROM APP.TSX
-      {/* <GroupSidebar />
-      <ServiceSidebar />
-      <ServiceDashboard /> */}
-    </>)
+      <GroupsSidebar />
+      <ServicesSidebar />
+      <ServiceDashboard />
+    </>
+  )
 }
