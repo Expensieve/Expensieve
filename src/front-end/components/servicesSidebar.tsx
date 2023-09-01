@@ -1,9 +1,9 @@
 import React from 'react'
 
-const servicesSidebar = () => {
+const ServicesSidebar = () => {
   return (
     <div>servicesSidebar</div>
   )
 }
 
-export default servicesSidebar
+export default ServicesSidebar

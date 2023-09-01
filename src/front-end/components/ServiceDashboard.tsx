@@ -15,7 +15,7 @@ const data = {
   userIsOwner: true,
 }
 
-const serviceDashboard = () => {
+const ServiceDashboard = () => {
   return (
     <div className="border-red-600 border-2">
       <div className="text-center">
@@ -124,4 +124,4 @@ const serviceDashboard = () => {
   );
 };
 
-export default serviceDashboard;
+export default ServiceDashboard;

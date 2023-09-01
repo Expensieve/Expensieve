@@ -1,9 +1,9 @@
 import React from 'react'
 
-const groupsSidebar = () => {
+const GroupsSidebar = () => {
   return (
     <div>groupsSidebar</div>
   )
 }
 
-export default groupsSidebar
+export default GroupsSidebar

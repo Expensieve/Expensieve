@@ -1,6 +1,6 @@
 import React from 'react'
 
-const userList = () => {
+const UserList = () => {
   return (
     <div className="border-2 border-red-600">
       userList
@@ -8,4 +8,4 @@ const userList = () => {
   )
 }
 
-export default userList
+export default UserList

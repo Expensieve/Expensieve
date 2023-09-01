@@ -1,7 +1,7 @@
 import React from "react";
 import GroupsSidebar from "./src/front-end/components/groupsSidebar";
-import ServiceDashboard from "./src/front-end/components/serviceDashboard";
 import ServicesSidebar from "./src/front-end/components/servicesSidebar";
+import ServiceDashboard from "./src/front-end/components/serviceDashboard";
 import './app.css';
 
 export default function App() {
@@ -10,5 +10,6 @@ export default function App() {
       <GroupsSidebar />
       <ServicesSidebar />
       <ServiceDashboard />
-    </>)
+    </>
+  )
 }

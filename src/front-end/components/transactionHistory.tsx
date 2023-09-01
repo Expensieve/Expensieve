@@ -1,6 +1,6 @@
 import React from 'react'
 
-const transactionHistory = () => {
+const TransactionHistory = () => {
   return (
     <div className="border-2 border-red-600">
       transactionHistory
@@ -8,4 +8,4 @@ const transactionHistory = () => {
   )
 }
 
-export default transactionHistory
+export default TransactionHistory
