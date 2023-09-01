@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 //Connect to DB
-
+const appRouter = require('./db/dbRoutes/appRouter');
 
 //Server Dependencies
 app.use(express.json());
@@ -18,6 +18,12 @@ app.use(cookieParser());
 app.get('/', (req, res)=>{
   res.sendFile(path.resolve(__dirname,'../../index.html')); //Update to use build html file later**
 })
+
+//Routes
+
+app.use('/', appRouter);
+
+
 
 //Page Not Found Error
 app.use((req,res)=>{

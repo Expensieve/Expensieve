@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import GroupSidebar from "./src/front-end/components/GroupSidebar";
 import ServiceSidebar from "./src/front-end/components/ServiceSidebar";
+import ServiceDashboard from "./src/front-end/components/ServiceDashboard";
 
 const [groupSelection, setGroupSelection] = useState("");
 const [serviceSelection, setServiceSelection] = useState("");
@@ -8,9 +9,9 @@ const [serviceSelection, setServiceSelection] = useState("");
 export default function App() {
   return (
     <>
-      <GroupSidebar group = {groupSelection} setGroup = {setGroupSelection}/>
-      <ServiceSidebar service = {serviceSelection} setService = {setServiceSelection}/>
-      {/* <ServiceDashboard /> */}
+      <GroupSidebar groupSelection = {groupSelection} setGroupSelection = {setGroupSelection}/>
+      <ServiceSidebar serviceSelection = {serviceSelection} setServiceSelection = {setServiceSelection}/>
+      <ServiceDashboard/>
     </>
   )
 }

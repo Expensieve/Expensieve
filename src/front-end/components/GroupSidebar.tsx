@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 
+type GroupSidebarProps = {
+  groupSelection: any,
+  setGroupSelection: any,
+}
+
 const testArray = [{
     id: 0,
     name: 'Squirtle Squad'
@@ -14,7 +19,7 @@ const testArray = [{
     name: 'My Deadbeat Friends'
   }];
 
-export default function GroupSidebar({groupSelection, setGroupSelection}) {
+export default function GroupSidebar({groupSelection, setGroupSelection}: GroupSidebarProps) {
 
   function handleClick(group: { id: number; name: string }) {
     setGroupSelection(group.name)
@@ -24,7 +29,7 @@ export default function GroupSidebar({groupSelection, setGroupSelection}) {
 
   const groupList = testArray.map(group =>
     <li key={group.id}>
-      <button onClick={handleClick}>
+      <button onClick={() => handleClick}>
         {group.name}
       </button>
     </li>

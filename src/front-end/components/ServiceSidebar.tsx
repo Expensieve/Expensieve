@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 
+type ServiceSidebarProps = {
+  serviceSelection: any,
+  setServiceSelection: any
+}
+
 const testArray = [{
     id: 0,
     name: '❌ Notflix'
@@ -14,7 +19,7 @@ const testArray = [{
     name: '🦙 Llamazon Web Services'
   }]
 
-export default function ServiceSidebar({serviceSelection, setServiceSelection}) {
+export default function ServiceSidebar({serviceSelection, setServiceSelection}: ServiceSidebarProps) {
   testArray.sort();
 
   const servicesList = testArray.map(serviceName =>
