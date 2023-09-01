@@ -14,7 +14,22 @@ groupController.group = (req, res, next) =>{
 
 
 //Get all groups
+groupController.getAllGroups = async (req, res, next) =>{
+console.log('Fetching all groups');
 
+const queryString = `SELECT * FROM groups`;
+
+
+await db.query(queryString)
+.then((data)=>{
+  res.locals.allGroups = data.rows;
+});
+
+console.log(res.locals.allGroups)
+ 
+next();
+
+}
 
 //Get groups owned by user
 
