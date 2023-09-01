@@ -2,7 +2,9 @@ import React from 'react'
 
 const ServicesSidebar = () => {
   return (
-    <div>servicesSidebar</div>
+    <div className="dark:text-white">
+      servicesSidebar
+    </div>
   )
 }
 

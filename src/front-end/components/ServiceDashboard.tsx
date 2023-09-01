@@ -19,11 +19,11 @@ const ServiceDashboard = () => {
   return (
     <div className="border-red-600 border-2">
       <div className="text-center">
-        <h1 className="text-3xl">
+        <h1 className="text-3xl dark:text-white">
           {data.serviceName}
         </h1>
         <h1
-          className="text-xs font-mono italic"
+          className="text-xs font-mono italic dark:text-white"
         >
           owned by&nbsp;
           <span
@@ -96,12 +96,12 @@ const ServiceDashboard = () => {
             </div>
           </div>
         </div>
-        <h1 className="font-mono text-xs py-2">
+        <h1 className="font-mono text-xs py-2 dark:text-white">
           {data.serviceDescription}
         </h1>
         </div>
       <div className="flex">
-        <h1 className="flex-auto text-center">
+        <h1 className="flex-auto text-center dark:text-white">
           {data.serviceUsername}
         </h1>
         <button>Copy</button>
