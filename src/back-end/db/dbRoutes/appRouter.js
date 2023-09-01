@@ -9,8 +9,15 @@ const appRouter = Router();
 
 
 //Add routes for '/user' here
+
+
 appRouter.get('/user', userController.user, (req, res)=>{
   console.log('Router for user is working!')
+  res.status(200)
+})
+
+appRouter.post('/user/register', userController.createUser, (req, res)=>{
+  console.log(`${res.locals.newUser} has been added to database!`)
   res.status(200)
 })
 
