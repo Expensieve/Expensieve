@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Expensieve/Expensieve#readme",
   "dependencies": {
+    "@types/pg": "^8.10.2",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
