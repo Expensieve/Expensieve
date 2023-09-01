@@ -1,15 +1,17 @@
-import React from "react";
-import GroupsSidebar from "./src/front-end/components/groupsSidebar";
-import ServicesSidebar from "./src/front-end/components/servicesSidebar";
+import React, { useState } from "react";
+import GroupSidebar from "./src/front-end/components/GroupSidebar";
+import ServiceSidebar from "./src/front-end/components/ServiceSidebar";
 import ServiceDashboard from "./src/front-end/components/ServiceDashboard";
-import './app.css';
+
+const [groupSelection, setGroupSelection] = useState("");
+const [serviceSelection, setServiceSelection] = useState("");
 
 export default function App() {
   return (
     <>
-      <GroupsSidebar />
-      <ServicesSidebar />
-      <ServiceDashboard />
+      <GroupSidebar groupSelection = {groupSelection} setGroupSelection = {setGroupSelection}/>
+      <ServiceSidebar serviceSelection = {serviceSelection} setServiceSelection = {setServiceSelection}/>
+      <ServiceDashboard/>
     </>
   )
 }
