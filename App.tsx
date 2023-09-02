@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import GroupsSidebar from "./src/front-end/components/groupsSidebar";
-import ServicesSidebar from "./src/front-end/components/servicesSidebar";
+import GroupsSidebar from "./src/front-end/components/GroupSidebar";
+import ServicesSidebar from "./src/front-end/components/ServiceSidebar";
 import ServiceDashboard from "./src/front-end/components/ServiceDashboard";
 import { GroupSidebarProps, ServiceSidebarProps } from "./src/front-end/types/types";
 import './app.css';
@@ -43,11 +43,11 @@ export default function App() {
 
   return (
     <div className="display: flex h-screen">
-      <GroupSidebar
+      <GroupsSidebar
         groupSelection = {groupSelection}
         setGroupSelection = {setGroupSelection}
       />
-      <ServiceSidebar
+      <ServicesSidebar
         groupSelection = {groupSelection}
         setGroupSelection = {setGroupSelection}
         serviceSelection = {serviceSelection}
