@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'), cors = require('cors');
 const path = require('path');
 const app = express();
 const PORT = 3000;
@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const appRouter = require('./db/dbRoutes/appRouter');
 
 //Server Dependencies
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());

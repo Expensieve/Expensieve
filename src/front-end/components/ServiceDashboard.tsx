@@ -15,7 +15,19 @@ const data = {
   userIsOwner: true,
 }
 
-const ServiceDashboard = () => {
+type serviceDashboardProps = {
+  serviceData: {
+    cost: number,
+    description: string,
+    id: number,
+    name: string,
+    owner: number,
+    password: string,
+    url: string,
+  },
+}
+
+const ServiceDashboard = ({serviceData}: serviceDashboardProps) => {
   return (
     <div className="border-red-600 border-2">
       <div className="text-center">
@@ -104,8 +116,10 @@ const ServiceDashboard = () => {
         <h1 className="flex-auto text-center dark:text-white">
           {data.serviceUsername}
         </h1>
-        <button>Copy</button>
-        <h1 className="flex-auto text-center">
+        <button className="dark:text-white">
+          Copy
+        </button>
+        <h1 className="flex-auto text-center dark:text-white">
           {data.servicePassword}
         </h1>
       </div>
