@@ -37,14 +37,15 @@ JSON body format:
   "description": "'string'",
   "password": "'string'",
   "cost": number,
-  "url": "'string'"
+  "url": "'string'",
+  "in_group": number
  }
 */
 serviceController.addNewService = async (req, res, next) => {
   console.log('Adding New Service');
-  const {name, owner, description, password, cost, url} = req.body;
-  console.log(name, owner, description, password, cost, url);
-  const queryString = `INSERT INTO services (name, owner, description, password, cost, url) VALUES (${name},${owner},${description},${password},${cost},${url});`;
+  const {name, owner, description, password, cost, url, in_group} = req.body;
+  console.log(name, owner, description, password, cost, url, in_group);
+  const queryString = `INSERT INTO services (name, owner, description, password, cost, url, in_group) VALUES (${name},${owner},${description},${password},${cost},${url}, ${in_group});`;
   res.locals.newService = `${name}`
 
   db.query(queryString);

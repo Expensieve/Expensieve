@@ -121,7 +121,8 @@ JSON body format:
   "description": "'string'",
   "password": "'string'",
   "cost": number,
-  "url": "'string'"
+  "url": "'string'",
+  "in_group": number
  }
 */
 appRouter.post('/service/new', serviceController.addNewService, (req,res)=>{
