@@ -11,8 +11,35 @@ userController.user = (req,res, next)=>{
 //Verify User
 
 
-//Create a User
+//Get all Users
+userController.getAllUsers = async (req, res, next)=>{
+  console.log('Fetching all users');
 
+  const queryString = `SELECT * FROM users`;
+
+
+  await db.query(queryString)
+  .then((data)=>{
+    res.locals.allUsers = data.rows;
+  });
+
+  console.log(res.locals.allUsers);
+  
+  next();
+}
+
+
+//Create a User
+userController.createUser = (req, res, next) => {
+  console.log('Creating User');
+  const {userName, firstName, lastName} = req.body;
+  const queryString = `INSERT INTO users (username, firstname, lastname) values(${userName}, ${firstName}, ${lastName})`
+  res.locals.newUser = `Username: ${userName}`;
+
+  db.query(queryString);
+
+  next();
+}
 
 //Delete a User
 
