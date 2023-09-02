@@ -5,6 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "test": "test",
+    "restart":"npm run build && npm start",
     "start": "node src/back-end/server.js",
     "start-dev": "webpack serve --open & nodemon src/back-end/server.js",
     "build": "webpack --mode development"

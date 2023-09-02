@@ -10,10 +10,22 @@ const appRouter = Router();
 
 //Add routes for '/user' here
 
-
+//test User Router
 appRouter.get('/user', userController.user, (req, res)=>{
   console.log('Router for user is working!')
   res.status(200)
+})
+
+//Obtain all data
+appRouter.get('/all', userController.getAllUsers, groupController.getAllGroups, serviceController.getAllServices, (req, res)=>{
+  console.log('Did you get all the users?!');
+  console.log(res.locals);
+  res.status(200).send(
+    {
+      userData : res.locals.allUsers,
+      serviceData : res.locals.allServices,
+      groupData: res.locals.allGroups
+    });
 })
 
 appRouter.post('/user/register', userController.createUser, (req, res)=>{
