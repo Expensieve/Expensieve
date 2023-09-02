@@ -16,24 +16,28 @@ userController.getAllUsers = async (req, res, next)=>{
   console.log('Fetching all users');
 
   const queryString = `SELECT * FROM users`;
-
-
   await db.query(queryString)
-  .then((data)=>{
-    res.locals.allUsers = data.rows;
-  });
-
-  console.log(res.locals.allUsers);
-  
+    .then((data)=>{
+      res.locals.allUsers = data.rows;
+  }); 
   next();
 }
 
 
 //Create a User
+/*
+JSON body format:
+ {
+  "userName": "'string'",
+  "firstName": "'string'",
+  "lastName": "'string'",
+  "pin?": number
+ }
+*/
 userController.createUser = (req, res, next) => {
   console.log('Creating User');
   const {userName, firstName, lastName} = req.body;
-  const queryString = `INSERT INTO users (username, firstname, lastname) values(${userName}, ${firstName}, ${lastName})`
+  const queryString = `INSERT INTO users (username, firstname, lastname) values(${userName}, ${firstName}, ${lastName});`
   res.locals.newUser = `Username: ${userName}`;
 
   db.query(queryString);
