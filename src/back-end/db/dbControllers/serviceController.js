@@ -13,6 +13,20 @@ serviceController.service = (req, res, next)=>{
 
 //Get all services
 
+serviceController.getAllServices = async (req, res, next) =>{
+
+console.log('Fetching all users');
+
+const queryString = `SELECT * FROM services`;
+
+
+await db.query(queryString)
+.then((data)=>{
+  res.locals.allServices = data.rows;
+});
+console.log(res.locals.allServices)
+next();
+};
 
 //Get services owned by user
 
