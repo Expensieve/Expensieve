@@ -3,41 +3,44 @@ const db = require('../dbModels/expensieveDB');
 
 const groupController = {};
 
-//Is Router working?
+//TEST ROUTE
 groupController.group = (req, res, next) =>{
   console.log('Group Controller is functioning!');
   next();
 };
 
 
-//Verify Group
+//VERIFY GROUP INFO
 
 
-//Get all groups
+//GET ALL GROUPS
 groupController.getAllGroups = async (req, res, next) =>{
-console.log('Fetching all groups');
+  console.log('Fetching all groups');
+  const queryString = `SELECT * FROM groups`;
+  await db.query(queryString)
+    .then((data)=>{
+      res.locals.allGroups = data.rows;
+  }) 
+  next();
+  };
 
-const queryString = `SELECT * FROM groups`;
-
-
-await db.query(queryString)
-.then((data)=>{
-  res.locals.allGroups = data.rows;
-});
-
-console.log(res.locals.allGroups)
- 
-next();
-
-}
-
-//Get groups owned by user
+//VERIFY GROUP OWNER TYPE (CURRENT USER, OTHERS)
 
 
 //Get groups owned by other users
 
 
-//Create a group
+//CREATE NEW GROUP
+
+groupController.createNewGroup = (req, res, next) => {
+  console.log('Creating New Group');
+  const {name, owner} = req.body;
+  const queryString = `INSERT INTO groups (name, owner) values(${name}, ${owner});`
+  res.locals.newGroup = `Group: ${name}`;
+  db.query(queryString);
+  next();
+}
+
 
 
 //Delete a group
