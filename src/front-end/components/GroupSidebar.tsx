@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-
-type GroupSidebarProps = {
-  groupSelection: any,
-  setGroupSelection: any,
-}
+import { GroupSidebarProps } from '../types/types';
 
 const testArray = [{
     id: 0,
@@ -21,15 +17,18 @@ const testArray = [{
 
 export default function GroupSidebar({groupSelection, setGroupSelection}: GroupSidebarProps) {
 
-  function handleClick(group: { id: number; name: string }) {
-    setGroupSelection(group.name)
+  // function handleClick(el: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  //   console.log(el);
+
+  function handleClick(el: any) {
+    setGroupSelection(parseInt(el.target.id));
   }
 
   testArray.sort();
 
   const groupList = testArray.map(group =>
-    <li key={group.id}>
-      <button onClick={() => handleClick}>
+    <li key={group.id} className='hover:bg-gray-600'>
+      <button onClick={(el) => handleClick(el)} id={group.id.toString()}>
         {group.name}
       </button>
     </li>
@@ -37,15 +36,15 @@ export default function GroupSidebar({groupSelection, setGroupSelection}: GroupS
 
   return (
     <>
-      <div>
-        <h1>Expensieve</h1>
+      <div className="dark:text-white">
+        <h1 className='text-3xl'>Expensieve</h1>
           <ul>
             {groupList}
           </ul>
       </div>
 
       <button
-        id="main"
+        id="groupSidebar"
         className="btn btn-large"
         name="submission"
         role="button"

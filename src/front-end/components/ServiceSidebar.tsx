@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-
-type ServiceSidebarProps = {
-  serviceSelection: any,
-  setServiceSelection: any
-}
+import { GroupSidebarProps, ServiceSidebarProps } from '../types/types';
 
 const testArray = [{
     id: 0,
@@ -19,34 +15,39 @@ const testArray = [{
     name: '🦙 Llamazon Web Services'
   }]
 
-export default function ServiceSidebar({serviceSelection, setServiceSelection}: ServiceSidebarProps) {
+export default function ServiceSidebar({ groupSelection, setGroupSelection, serviceSelection, setServiceSelection }: ServiceSidebarProps) {
   testArray.sort();
 
+  console.log(serviceSelection);
+
   const servicesList = testArray.map(serviceName =>
-    <li key={serviceName.id}>
+    <li key={serviceName.id} className='hover:bg-gray-600'>
       {serviceName.name}
     </li>
   )
 
-  return (
-    <>
-    <div>
-      <h1>
-        <ul>
-          {servicesList}
-        </ul>
-      </h1>
-    </div>
+  if (groupSelection != "") {
+    return (
+      <>
+        <div className="dark:text-white">
+        <h1>
+          <ul>
+            {servicesList}
+          </ul>
+        </h1>
+        </div>
 
-    <button
-        id="main"
-        className="btn btn-large"
-        name="submission"
-        role="button"
-        data-cy="submit"
-      >
-        Submit
-      </button>
-    </>
-  )
+        <button
+          id="serviceSidebar"
+          className="btn btn-large"
+          name="submission"
+          role="button"
+          data-cy="submit"
+        >
+          Submit
+        </button>
+      </>
+    )
+  }
+  return null;
 }
