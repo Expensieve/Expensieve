@@ -104,8 +104,10 @@ const ServiceDashboard = () => {
         <h1 className="flex-auto text-center dark:text-white">
           {data.serviceUsername}
         </h1>
-        <button>Copy</button>
-        <h1 className="flex-auto text-center">
+        <button className="dark:text-white">
+          Copy
+        </button>
+        <h1 className="flex-auto text-center dark:text-white">
           {data.servicePassword}
         </h1>
       </div>
