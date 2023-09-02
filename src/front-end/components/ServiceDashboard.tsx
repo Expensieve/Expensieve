@@ -15,7 +15,19 @@ const data = {
   userIsOwner: true,
 }
 
-const ServiceDashboard = () => {
+type serviceDashboardProps = {
+  serviceData: {
+    cost: number,
+    description: string,
+    id: number,
+    name: string,
+    owner: number,
+    password: string,
+    url: string,
+  },
+}
+
+const ServiceDashboard = ({serviceData}: serviceDashboardProps) => {
   return (
     <div className="border-red-600 border-2">
       <div className="text-center">
