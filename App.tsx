@@ -12,20 +12,6 @@ export default function App() {
 
   const [data, setData] = useState<any>({});
   
-  useEffect(() => {
-    Axios({
-      method: "GET",
-      url: "http://localhost:3000/all",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(res => {
-      console.log("res.data:", res.data);
-      setData(res.data);
-    })
-  }, [setData]);
-  
-  
   const [serviceData, setServiceData] = useState({
     cost: 0,
     description: "",
@@ -36,13 +22,20 @@ export default function App() {
     url: "",
   });
 
+  const getData = async () => {
+    const {data} = await Axios.get("http://localhost:3000/all");
+    setData(data);
+    setServiceData(data.serviceData.filter((service: { id: number; }) => service.id === 1003)[0]);
+  }
+  useEffect(() => {
+    getData();
+  }, []);
+  
   console.log("data:", data);
-
-  // setServiceData(data.serviceData.filter((service) => service.id === 1003))
-
-
+  console.log("serviceData:", serviceData);
+  
   return (
-    <div className="display: flex h-screen">
+    <div className="flex h-screen">
       <GroupsSidebar
         groupSelection = {groupSelection}
         setGroupSelection = {setGroupSelection}
