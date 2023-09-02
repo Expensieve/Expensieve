@@ -2,7 +2,9 @@ import React from 'react'
 
 const GroupsSidebar = () => {
   return (
-    <div>groupsSidebar</div>
+    <div className="dark:text-white">
+      groupsSidebar
+    </div>
   )
 }
 

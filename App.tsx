@@ -1,15 +1,27 @@
-import React from "react";
-import GroupsSidebar from "./src/front-end/components/groupsSidebar";
-import ServicesSidebar from "./src/front-end/components/servicesSidebar";
+import React, { useState } from "react";
+import GroupSidebar from "./src/front-end/components/GroupSidebar";
+import ServiceSidebar from "./src/front-end/components/ServiceSidebar";
 import ServiceDashboard from "./src/front-end/components/ServiceDashboard";
-import './app.css';
+import { GroupSidebarProps, ServiceSidebarProps } from "./src/front-end/types/types";
+import "./app.css"
 
 export default function App() {
+  const [groupSelection, setGroupSelection] = useState("");
+  const [serviceSelection, setServiceSelection] = useState("");
+
   return (
-    <>
-      <GroupsSidebar />
-      <ServicesSidebar />
-      <ServiceDashboard />
-    </>
+    <div className="display: flex h-screen">
+      <GroupSidebar
+        groupSelection = {groupSelection}
+        setGroupSelection = {setGroupSelection}
+      />
+      <ServiceSidebar
+        groupSelection = {groupSelection}
+        setGroupSelection = {setGroupSelection}
+        serviceSelection = {serviceSelection}
+        setServiceSelection = {setServiceSelection}
+      />
+      <ServiceDashboard/>
+    </div>
   )
 }
